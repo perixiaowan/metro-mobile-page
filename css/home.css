@@ -162,6 +162,7 @@ body.modal-open {
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
+
 @-webkit-keyframes zoomIn {
   from {
     opacity: 0;

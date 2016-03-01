@@ -11,7 +11,7 @@ $(function () {
 	$('.item-rect').height(iw);
 	$("div#13 ").css("background-image","url(./images/banks.jpg)");
 	$("div#13 ").css("background-position","center");
-	$("div#13 ").css("background-size","cover");
+	$("div#13 ").css("background-size","contain");
 	
 
 	$('.item-square, .item-rect').on('click', function () {
