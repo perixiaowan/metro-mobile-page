@@ -27,7 +27,6 @@ $(function () {
 		$('.body').removeClass('modal-open');
 	})
 
-})
 
 	console.log("tranz :"+ tranz ,tranz2);
 	$(".flip").css("-webkit-transform", tranz);
@@ -49,4 +48,6 @@ $(function () {
 	
 	}
 
+
 });
+
