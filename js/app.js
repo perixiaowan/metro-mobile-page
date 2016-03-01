@@ -15,6 +15,11 @@ $(function () {
 		$('body').addClass('modal-open')
 	})
 
+	$('.modal').on('click', function () {
+		$('.modal').hide();
+		$('.body').removeClass('modal-open');
+	})
+
 })
 
 
