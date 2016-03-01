@@ -1,14 +1,26 @@
 $(function () {
-	var wid = $('.item-square').width()
-	console.log("wid :" + wid);
-	$('.item-square').height(wid);
-	$('.item-rect').height(wid);
+
+
+	// init
+	var iw = $('.item-square').width();
+	var dw = $(window).width();
+	var dh = $(window).height();
+	console.log("iw :" + iw);
+	console.log("dh :" + dh);
+	$('.item-square').height(iw);
+	$('.item-rect').height(iw);
 	$("div#13 ").css("background-image","url(./images/banks.jpg)");
 	$("div#13 ").css("background-position","center");
 	$("div#13 ").css("background-size","cover");
+	
 
-	var tranz = "translateZ("+wid/2+"px)";
-	var tranz2 = "rotateX(-90deg) "+"translateZ("+(-wid/2)+"px)";
+	$('.item-square, .item-rect').on('click', function () {
+		$('.modal').show();
+		$('body').addClass('modal-open')
+	})
+
+	var tranz = "translateZ("+iw/2+"px)";
+	var tranz2 = "rotateX(-90deg) "+"translateZ("+(-iw/2)+"px)";
 
 	console.log("tranz :"+ tranz ,tranz2);
 	$(".flip").css("-webkit-transform", tranz);

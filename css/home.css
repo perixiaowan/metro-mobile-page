@@ -119,3 +119,74 @@ body {
 .maroon { background-color: #A52A2A; }
 .teal { background-color: #008080; }
 
+/* Modal Box */
+body.modal-open {
+    overflow: hidden;
+}
+.modal {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(255,255,255,.99);
+    color: #000;
+    overflow: auto;
+    display: none;
+}
+
+.modal-container {
+}
+.modal-content {
+
+}
+.modal-content h2 {
+    margin: 10px 15px;
+    font-weight: normal;
+}
+.modal-content p {
+    margin: 10px 15px;
+    font-size: 16px;
+}
+
+
+.animated {
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
