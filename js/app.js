@@ -22,6 +22,13 @@ $(function () {
 	var tranz = "translateZ("+iw/2+"px)";
 	var tranz2 = "rotateX(-90deg) "+"translateZ("+(-iw/2)+"px)";
 
+	$('.modal').on('click', function () {
+		$('.modal').hide();
+		$('.body').removeClass('modal-open');
+	})
+
+})
+
 	console.log("tranz :"+ tranz ,tranz2);
 	$(".flip").css("-webkit-transform", tranz);
 	$(".flop").css("-webkit-transform", tranz2);
