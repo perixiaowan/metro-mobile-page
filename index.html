@@ -6,6 +6,8 @@
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Didact+Gothic" rel="stylesheet" type="text/css">
     <link href="css/home.css" rel="stylesheet">
+    <link href="css/pagetransitions.css" rel="stylesheet">
+    <link href="css/animations.css" rel="stylesheet">
 </head>
 <body>
     <div id="header">
@@ -14,7 +16,11 @@
     <div id="main">
         <div class="item-row"> 
             <div class="item-square">
-                <div class="teal flip"><p>lex 词法分析器</p></div>
+                <div class="pt-animate pt-perspective">
+                    <div class="pt-page pt-page-current teal pt-page-rotateCubeTopOut"><p>lex 词法分析器</p></div>
+                    <div class="pt-page red"><p>lex 词法分析器</p></div>
+                    <div class="pt-page yellow"><p>lex 词法分析器</p></div>
+                </div>
             </div>
             <div class="item-square">
                 <div class="red"><p>lex 词法分析器</p></div>
@@ -28,7 +34,7 @@
             <div class="item-square">
                 <div class="light-purple"><p>lex 词法分析器</p></div>
             </div>
-            <div class="item-rect">
+            <div class="pt-item item-rect">
                 <div class="blue"><p>这是一条测试栅格系统，字比较多</p></div>
             </div>        
         </div>
@@ -118,6 +124,7 @@
         <p>&copy; 2016 新华社技术实验室</p>
     </div>
     <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/pagetransitions.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
