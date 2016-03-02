@@ -2,11 +2,10 @@ $(function () {
 
 
 	// init
-	var iw = $('.item-square').width();
-	var dw = $(window).width();
-	var dh = $(window).height();
-	console.log("iw :" + iw);
-	console.log("dh :" + dh);
+	var iw = $('.item-square').width();		// item width
+	var dw = $(window).width();				// device width
+	var dh = $(window).height();			// device height
+
 	$('.item-square').height(iw);
 	$('.item-rect').height(iw);
 	$("div#r13 ").css("background-image","url(./images/banks.jpg)");
@@ -14,17 +13,13 @@ $(function () {
 	$("div#r13 ").css("background-size","cover");
 	
 
+	var $home    = $('#home');
+	var $article = $('#article');
 	$('.item-square, .item-rect').on('click', function () {
-		$('.modal').show();
-		$('body').addClass('modal-open')
+		$home.hide();
+		$article.show();
 	})
 
-
-
-	$('.modal').on('click', function () {
-		$('.modal').hide();
-		$('.body').removeClass('modal-open');
-	})
 
 
 	var ori = iw/2+"px "+iw/2+"px "+(-iw/2)+"px" ;
@@ -67,5 +62,10 @@ $(function () {
 	
 	}
 
-});
+	$('#back').on('click', function () {
+		$home.show();
+		$article.hide();
+	})
 
+
+});

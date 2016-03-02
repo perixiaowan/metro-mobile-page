@@ -3,8 +3,12 @@ body {
     margin: 0;
     background-color: #000000;
     font-family: 'Open Sans', 'Microsoft Yahei', sans-serif;
-    font-size: 20px;
+    font-size: 14px;
     color: #fff;
+}
+
+#home {
+
 }
 
 #header, #footer {
@@ -17,7 +21,7 @@ body {
 
 #header h2 {
     margin: 0;
-    font-size: 1.2em;
+    font-size: 1.6em;
     font-weight: 400;
 }
 
@@ -81,7 +85,7 @@ body {
     left: 0;
     bottom: 0;
     font-family: 'Didact Gothic', 'Microsoft Yahei', sans-serif;
-    font-size: 16px;
+    font-size: 1.2em;
     color: #fff;
 }
 
@@ -94,7 +98,6 @@ body {
 .back {
     /*-webkit-transform: rotateX(-90deg) translateZ(-60px);*/
     -webkit-transform: rotateX(-90deg);
-
 }
 .face {
     -webkit-transform-origin: 0 0;
@@ -123,7 +126,7 @@ body {
 
 }
 .top{
-
+    
 }
 .bottom{
 /*    top: -30px;
@@ -132,6 +135,30 @@ body {
 .bottom p{
     z-index: -99;
 }
+
+#article {
+  display: none;
+}
+
+#article h1, #article h2, #article p {
+  margin: 15px;
+}
+#article h1 {
+  font-weight: normal;
+  font-size: 1.4em;
+}
+#article h2 {
+  font-size: 1.2em;
+}
+#article p {
+  font-size: 1em;
+}
+#article img {
+  display: block;
+  width: 100%;
+
+}
+
 
 .blue   { background-color: rgb(0,99,177); }
 .light-blue   { background-color: rgb(39,117,236); }
@@ -148,4 +175,10 @@ body {
 /*.maroon { background-color: #85144b; }*/
 .maroon { background-color: #A52A2A; }
 .teal { background-color: #008080; }
+
+
+#back {
+  padding: 15px;
+  font-size: 1.1em;
+}
 
