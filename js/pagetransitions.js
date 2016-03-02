@@ -1,10 +1,5 @@
 var PageTransitions = (function() {
 
-	$('.pt-page').on('animationend', function () {
-		console.log('animationend....');
-		$('.pt-page.red').addClass('pt-page-rotateCubeTopIn')
-		$('.pt-page.red').addClass('pt-page-current')
-	})
 
 	// Render Animate
 	var renderAnimate = function (selector) {
