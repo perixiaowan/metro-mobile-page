@@ -9,9 +9,9 @@ $(function () {
 	console.log("dh :" + dh);
 	$('.item-square').height(iw);
 	$('.item-rect').height(iw);
-	$("div#13 ").css("background-image","url(./images/banks.jpg)");
-	$("div#13 ").css("background-position","center");
-	$("div#13 ").css("background-size","contain");
+	$("div#r13 ").css("background-image","url(./images/banks.jpg)");
+	$("div#r13 ").css("background-position","center");
+	$("div#r13 ").css("background-size","cover");
 	
 
 	$('.item-square, .item-rect').on('click', function () {
@@ -19,8 +19,7 @@ $(function () {
 		$('body').addClass('modal-open')
 	})
 
-	var tranz = "translateZ("+iw/2+"px)";
-	var tranz2 = "rotateX(-90deg) "+"translateZ("+(-iw/2)+"px)";
+
 
 	$('.modal').on('click', function () {
 		$('.modal').hide();
@@ -28,26 +27,45 @@ $(function () {
 	})
 
 
-	console.log("tranz :"+ tranz ,tranz2);
-	$(".flip").css("-webkit-transform", tranz);
-	$(".flop").css("-webkit-transform", tranz2);
-    /*-webkit-transform: rotateX(-90deg) translateZ(-60px);*/
+	var ori = iw/2+"px "+iw/2+"px "+(-iw/2)+"px" ;
+	$(".box").css("-webkit-transform-origin", ori);
 
+/*-webkit-transform-origin: 60px 60px -60px;*/
     var fliped = Boolean(false);
-	setInterval(rotate, 1000);
+	setInterval(rotate, 2000);
 
 	function rotate(){
 		if(!fliped){
-			$("#r11").css("-webkit-transform","rotateX(90deg)");
+			$(".box").css("-webkit-transform","rotateX(90deg)");
 			fliped = true;
 		}
 		else {
-			$("#r11").css("-webkit-transform","rotateX(0deg)");
+			$(".box").css("-webkit-transform","rotateX(0deg)");
 			fliped = false;
 		}
 	
 	}
 
+
+	//-webkit-transform: translateY(-180px);
+	var transup = "translateY("+(-iw)+"px)";
+	var transdown = "translateY(0px)";
+
+	//$(".card").css("-webkit-transform",trans);
+	var slided = Boolean(false);
+	setInterval(slides, 2100);
+
+	function slides(){
+		if(!slided){
+			$(".card").css("-webkit-transform",transup);
+			slided = true;
+		}
+		else {
+			$(".card").css("-webkit-transform",transdown);
+			slided = false;
+		}
+	
+	}
 
 });
 

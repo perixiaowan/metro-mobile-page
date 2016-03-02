@@ -45,7 +45,7 @@ body {
     -webkit-box-sizing: border-box;
     padding: 2px;
     position: relative;
-    -webkit-perspective: 50000px;
+    -webkit-perspective: 600px;
 }
 
 .item-square div, .item-rect div {
@@ -85,22 +85,52 @@ body {
     color: #fff;
 }
 
-.flip {
+.front {
     /*-webkit-transform: translateZ(60px);*/
+    -webkit-transform: rotateX(0deg);
+    /*opacity: 0.5;*/
 }
 
-.flop {
+.back {
     /*-webkit-transform: rotateX(-90deg) translateZ(-60px);*/
+    -webkit-transform: rotateX(-90deg);
 
 }
+.face {
+    -webkit-transform-origin: 0 0;
+}
 
-#r11 {
-    -webkit-transition: -webkit-transform .6s;
-    transition: transform .6s; /* Animate the transform properties */
-
-    -webkit-transform-style: preserve-3d;
+.box {
+    
     transform-style: preserve-3d; /* <-NB */
+    -webkit-transform-style: preserve-3d;
 
+    -webkit-backface-visibility: visible; 
+    backface-visibility: visible;
+
+
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out; 
+
+    /*-webkit-transform-origin: 60px 60px -60px;*/   /* !!!!!!*/
+}
+.slide {
+    overflow:hidden;
+
+}
+.card {
+    -webkit-transition:all 1.0s cubic-bezier(0.68, 0.04, 0.29, 0.96);
+
+}
+.top{
+
+}
+.bottom{
+/*    top: -30px;
+*/    z-index: -99;
+}
+.bottom p{
+    z-index: -99;
 }
 
 .blue   { background-color: rgb(0,99,177); }
@@ -119,75 +149,3 @@ body {
 .maroon { background-color: #A52A2A; }
 .teal { background-color: #008080; }
 
-/* Modal Box */
-body.modal-open {
-    overflow: hidden;
-}
-.modal {
-    position: fixed;
-    z-index: 99999;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: rgba(255,255,255,.99);
-    color: #000;
-    overflow: auto;
-    display: none;
-}
-
-.modal-container {
-}
-.modal-content {
-
-}
-.modal-content h2 {
-    margin: 10px 15px;
-    font-weight: normal;
-}
-.modal-content p {
-    margin: 10px 15px;
-    font-size: 16px;
-}
-
-
-.animated {
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-.animated.infinite {
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
-
-@-webkit-keyframes zoomIn {
-  from {
-    opacity: 0;
-    -webkit-transform: scale3d(.3, .3, .3);
-    transform: scale3d(.3, .3, .3);
-  }
-
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    -webkit-transform: scale3d(.3, .3, .3);
-    transform: scale3d(.3, .3, .3);
-  }
-
-  50% {
-    opacity: 1;
-  }
-}
-
-.zoomIn {
-  -webkit-animation-name: zoomIn;
-  animation-name: zoomIn;
-}
