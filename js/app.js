@@ -1,4 +1,4 @@
-// $(function () {
+$(function () {
 
 
 	// init
@@ -71,4 +71,4 @@
 
 
 	// end of app.js
-// });
+});
