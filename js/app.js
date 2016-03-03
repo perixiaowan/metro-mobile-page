@@ -12,12 +12,12 @@ $(function () {
 	$('.item-square, .item-rect').on('click', function () {
 		$home.hide();
 		$article.show();
-	})
+	});
 
 	$('#back').on('click', function () {
 		$home.show();
 		$article.hide();
-	})
+	});
 
-
+	// end of app.js
 });
