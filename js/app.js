@@ -1,4 +1,4 @@
-$(function () {
+// $(function () {
 
 
 	// init
@@ -18,7 +18,13 @@ $(function () {
 	$('.item-square, .item-rect').on('click', function () {
 		$home.hide();
 		$article.show();
-	})
+		var id = $(this).attr('id');
+		console.log(id)
+	});
+	$('#back').on('click', function () {
+		$home.show();
+		$article.hide();
+	});
 
 
 
@@ -62,10 +68,7 @@ $(function () {
 	
 	}
 
-	$('#back').on('click', function () {
-		$home.show();
-		$article.hide();
-	})
 
 
-});
+	// end of app.js
+// });
