@@ -8,13 +8,20 @@
 </head>
 
 <body>
+<div class="loader">
+    <div class='circle'></div>
+    <div class='circle'></div>
+    <div class='circle'></div>
+    <div class='circle'></div>
+    <div class='circle'></div>
+</div>
 <div id="home">
     <div id="header">
         <h2>2016年政府工作报告</h2>
     </div>
     <div id="main">
         <div class="item-row" id="r01">
-            <div class="item-square">
+            <div class="item-square" id="a-01">
                 <div class="box">
                     <div class="teal face front" id="r111">
                         <p>lex 词法分析器</p>
@@ -24,12 +31,12 @@
                     </div>
                 </div>
             </div>
-            <div class="item-square">
+            <div class="item-square" id="a-02">
                 <div class="red" id="r12">
                     <p>lex 词法分析器</p>
                 </div>
             </div>
-            <div class="item-square">
+            <div class="item-square" id="a-03">
                 <div class="slide">
                     <div class="navy card top" id="r13">
                         <p>栅格系统</p>
@@ -42,12 +49,12 @@
         </div>
         <!-- 第2行 -->
         <div class="item-row" id="02">
-            <div class="item-square ">
+            <div class="item-square" id="a-04">
                 <div class="light-purple">
                     <p>lex 词法分析器</p>
                 </div>
             </div>
-            <div class="item-rect">
+            <div class="item-rect" id="a-05">
                 <div class="fades">
                     <div class="blue">
                         <p>这是一条测试栅格系统，字比较多</p>
@@ -57,12 +64,12 @@
         </div>
         <!-- 第3行 -->
         <div class="item-row ">
-            <div class="item-rect ">
+            <div class="item-rect" id="a-06">
                 <div class="maroon">
                     <p>lex 词法分析器</p>
                 </div>
             </div>
-            <div class="item-square ">
+            <div class="item-square" id="a-07">
                 <div class="yellow">
                     <p>栅格系统</p>
                 </div>
@@ -70,12 +77,12 @@
         </div>
         <!-- 第4行 -->
         <div class="item-row ">
-            <div class="item-square ">
+            <div class="item-square" id="a-08">
                 <div class="light-blue">
                     <p>lex 词法分析器</p>
                 </div>
             </div>
-            <div class="item-rect ">
+            <div class="item-rect" id="a-09">
                 <div class="green">
                     <p>栅格系统</p>
                 </div>
@@ -83,12 +90,12 @@
         </div>
         <!-- 第5行 -->
         <div class="item-row ">
-            <div class="item-rect ">
+            <div class="item-rect" id="a-10">
                 <div class="lime-green">
                     <p>lex 词法分析器</p>
                 </div>
             </div>
-            <div class="item-square ">
+            <div class="item-square" id="a-11">
                 <div class="orange">
                     <p>栅格系统</p>
                 </div>
@@ -96,12 +103,12 @@
         </div>
         <!-- 第6行 -->
         <div class="item-row ">
-            <div class="item-square ">
+            <div class="item-square" id="a-12">
                 <div class="dark-red">
                     <p>lex 词法分析器</p>
                 </div>
             </div>
-            <div class="item-rect ">
+            <div class="item-rect" id="a-13">
                 <div class="purple">
                     <p>栅格系统</p>
                 </div>
@@ -134,6 +141,13 @@
 
 <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript">
+// $(window).load(function () {
+//     console.log('when??');
+//     $('#loader').hide();
+//     $('#home').show();
+// })
+// </script>
 </body>
 
 </html>
