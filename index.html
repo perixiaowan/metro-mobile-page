@@ -1,153 +1,169 @@
 <!doctype html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Didact+Gothic" rel="stylesheet" type="text/css">
+    <!-- <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Didact+Gothic" rel="stylesheet" type="text/css"> -->
     <link href="css/home.css" rel="stylesheet">
+    <script type="text/javascript">
+    window.scrollTo(0,0);
+    window.onload = function() {
+        setTimeout(function() {
+            //document.getElementById('loader').style['display'] = "none";
+            document.getElementById('home').style['opacity'] = 1;
+            document.getElementById('article').style['display'] = "visible";
+            // document.getElementById('loader').style['visibility'] = "hidden";
+            window.scrollTo(0,0);
+            var body = document.getElementById("body");
+            var loader = document.getElementById("loader");
+            body.removeChild(loader);
+
+        }, 1000);
+
+        //$('#home').show();
+    };
+    </script>
 </head>
 
-<body>
-<!-- <div class="loader">
-    <div class='circle'></div>
-    <div class='circle'></div>
-    <div class='circle'></div>
-    <div class='circle'></div>
-    <div class='circle'></div>
-</div> -->
-<div id="home">
-    <div id="header">
-        <h2>2016年政府工作报告</h2>
+<body style="position:relative" id="body">
+    <div class="loader" id="loader">
+        <div class='circle'></div>
+        <div class='circle'></div>
+        <div class='circle'></div>
+        <div class='circle'></div>
+        <div class='circle'></div>
     </div>
-    <div id="main">
-        <div class="item-row" id="r01">
-            <div class="item-square" id="a-01">
-                <div class="box">
-                    <div class="teal face front" id="r111">
-                        <p>lex 词法分析器</p>
-                    </div>
-                    <div class="navy face back" id="r112">
-                        <p>Another One!</p>
-                    </div>
-                </div>
+    <div class="slide">
+        <div id="home" class="screen mainp">
+            <div id="header">
+                <h2>2016年政府工作报告</h2>
             </div>
-            <div class="item-square" id="a-02">
-                <div class="red" id="r12">
-                    <p>lex 词法分析器</p>
-                </div>
-            </div>
-            <div class="item-square" id="a-03">
-                <div class="slide">
-                    <div class="navy card top" id="r13">
-                        <p>栅格系统</p>
+            <div id="main">
+                <!-- 第1行 -->
+                <div class="item-row" id="r01">
+                    <div class="item-square" id="a-01">
+                        <div class="box">
+                            <div class="teal face front" id="r11">
+                                <p>lex 词法分析器</p>
+                            </div>
+                            <div class="navy face back" id="r12">
+                                <p>Another One!</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="maroon card bottom" id="r14">
-                        <p>ffewa</p>
+                    <div class="item-square" id="a-02">
+                        <div class="red" id="r12">
+                            <p>lex 词法分析器</p>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <!-- 第2行 -->
-        <div class="item-row" id="02">
-            <div class="item-square" id="a-04">
-                <div class="light-purple">
-                    <p>lex 词法分析器</p>
-                </div>
-            </div>
-            <div class="item-rect" id="a-05">
-                <div class="fades">
-                    <div class="blue">
-                        <p>这是一条测试栅格系统，字比较多</p>
+                    <div class="item-square" id="a-03">
+                        <div class="slide">
+                            <div class="navy card top" id="r13">
+                                <p>栅格系统</p>
+                            </div>
+                            <div class="maroon card bottom" id="r14">
+                                <p>ffewa</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <!-- 第2行 -->
+                <div class="item-row" id="02">
+                    <div class="item-square" id="a-04">
+                        <div class="light-purple">
+                            <p>lex 词法分析器</p>
+                        </div>
+                    </div>
+                    <div class="item-rect" id="a-05">
+                        <div class="fades">
+                            <div class="blue piece " id="r22">
+                                <p>第一条稿件</p>
+                            </div>
+                            <div class="lime-green piece " id="r23">
+                                <p>第二条稿件</p>
+                            </div>
+                            <div class="dark-red piece " id="r24">
+                                <p>第三条稿件</p>
+                            </div>
+                            <div class="green piece " id="r25">
+                                <p>第四条稿件</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 第3行 -->
+                <div class="item-row ">
+                    <div class="item-rect" id="a-06">
+                        <div class="maroon">
+                            <p>lex 词法分析器</p>
+                        </div>
+                    </div>
+                    <div class="item-square" id="a-07">
+                        <div class="yellow">
+                            <p>栅格系统</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 第4行 -->
+                <div class="item-row ">
+                    <div class="item-square" id="a-08">
+                        <div class="light-blue">
+                            <p>lex 词法分析器</p>
+                        </div>
+                    </div>
+                    <div class="item-rect" id="a-09">
+                        <div class="green">
+                            <p>栅格系统</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 第5行 -->
+                <div class="item-row ">
+                    <div class="item-rect" id="a-10">
+                        <div class="lime-green">
+                            <p>lex 词法分析器</p>
+                        </div>
+                    </div>
+                    <div class="item-square" id="a-11">
+                        <div class="orange">
+                            <p>栅格系统</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 第6行 -->
+                <div class="item-row ">
+                    <div class="item-square" id="a-12">
+                        <div class="dark-red">
+                            <p>lex 词法分析器</p>
+                        </div>
+                    </div>
+                    <div class="item-rect" id="a-13">
+                        <div class="purple">
+                            <p>栅格系统</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <p>&copy; 2016 新华社技术实验室</p>
             </div>
         </div>
-        <!-- 第3行 -->
-        <div class="item-row ">
-            <div class="item-rect" id="a-06">
-                <div class="maroon">
-                    <p>lex 词法分析器</p>
-                </div>
+        <div id="article" class="screen contentp">
+            <div class="article-content">
+                <h1>正在加载……</h1>
             </div>
-            <div class="item-square" id="a-07">
-                <div class="yellow">
-                    <p>栅格系统</p>
-                </div>
-            </div>
-        </div>
-        <!-- 第4行 -->
-        <div class="item-row ">
-            <div class="item-square" id="a-08">
-                <div class="light-blue">
-                    <p>lex 词法分析器</p>
-                </div>
-            </div>
-            <div class="item-rect" id="a-09">
-                <div class="green">
-                    <p>栅格系统</p>
-                </div>
-            </div>
-        </div>
-        <!-- 第5行 -->
-        <div class="item-row ">
-            <div class="item-rect" id="a-10">
-                <div class="lime-green">
-                    <p>lex 词法分析器</p>
-                </div>
-            </div>
-            <div class="item-square" id="a-11">
-                <div class="orange">
-                    <p>栅格系统</p>
-                </div>
-            </div>
-        </div>
-        <!-- 第6行 -->
-        <div class="item-row ">
-            <div class="item-square" id="a-12">
-                <div class="dark-red">
-                    <p>lex 词法分析器</p>
-                </div>
-            </div>
-            <div class="item-rect" id="a-13">
-                <div class="purple">
-                    <p>栅格系统</p>
+            <!-- end of content -->
+            <div id="back">
+                <span class="icon"></span>
+                <span>返回主页</span>
+                <div class="clear">
                 </div>
             </div>
         </div>
     </div>
-    <div id="footer">
-        <p>&copy; 2016 新华社技术实验室</p>
-    </div>
-</div>
-<div id="article" class="">
-    <div class="article-content">
-    <h1>这是一个测试稿件</h1>
-    <p>几天前，在驻村干部的帮助下，湖北恩施土家族自治州贫困户杨以松的家门口，一条平整干净的道路铺延而成。</p>
-    <img src="images/10.jpg">
-    <p>去年底，世界顶级期刊《科学》的一篇文章让位于上海的中科院硅酸盐所出了名。一种高性能超级电容器电极材料－－氮掺杂有序介孔石墨烯在这里研制成功。该材料具有极佳的电化学储能特性，可用作电动车的“超强电池”：充电只需７秒钟，即可续航３５公里。</p>
-    <p>为庆贺乔迁之喜，贵州省安顺市市民张明英今年过年第一次叫了亲戚朋友二十多人来家吃年饭。得益于棚改这一民生工程，今年她住进了５０余平方米的安置房，政府还给予她３０００元的搬家奖励。</p>
-    <p>几天前，在驻村干部的帮助下，湖北恩施土家族自治州贫困户杨以松的家门口，一条平整干净的道路铺延而成。</p>
-    <img src="images/10.jpg">
-    <p>去年底，世界顶级期刊《科学》的一篇文章让位于上海的中科院硅酸盐所出了名。一种高性能超级电容器电极材料－－氮掺杂有序介孔石墨烯在这里研制成功。该材料具有极佳的电化学储能特性，可用作电动车的“超强电池”：充电只需７秒钟，即可续航３５公里。</p>
-    <p>为庆贺乔迁之喜，贵州省安顺市市民张明英今年过年第一次叫了亲戚朋友二十多人来家吃年饭。得益于棚改这一民生工程，今年她住进了５０余平方米的安置房，政府还给予她３０００元的搬家奖励。</p>
-    <p>几天前，在驻村干部的帮助下，湖北恩施土家族自治州贫困户杨以松的家门口，一条平整干净的道路铺延而成。</p>
-    <img src="images/10.jpg">
-    <p>去年底，世界顶级期刊《科学》的一篇文章让位于上海的中科院硅酸盐所出了名。一种高性能超级电容器电极材料－－氮掺杂有序介孔石墨烯在这里研制成功。该材料具有极佳的电化学储能特性，可用作电动车的“超强电池”：充电只需７秒钟，即可续航３５公里。</p>
-    <p>为庆贺乔迁之喜，贵州省安顺市市民张明英今年过年第一次叫了亲戚朋友二十多人来家吃年饭。得益于棚改这一民生工程，今年她住进了５０余平方米的安置房，政府还给予她３０００元的搬家奖励。</p>
-    </div>
-    <!-- end of content -->
-    <div id="back"><span class="icon"></span> <span>返回主页</span><div class="clear"></div></div>
-</div>
-
-<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
-<script type="text/javascript">
-// $(window).load(function () {
-//     console.log('when??');
-//     $('#loader').hide();
-//     $('#home').show();
-// })
-// </script>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
 </body>
 
 </html>
