@@ -3,18 +3,26 @@ $(function () {
 	// Baidu API 'apikey':'c4d421473e859260c5a8867e0c163d12'
 	var key = "c4d421473e859260c5a8867e0c163d12";
 	// 天气情况
+	var weather;
+	var aqi;
+	var zimi;
+
+
 	$.ajax({
       url:"http://apis.baidu.com/apistore/weatherservice/weather?citypinyin=beijing",
       type:"GET",
       dataType:"json",
       headers:{'apikey':key},
       success: function(d){
-          var weather = JSON.stringify(d);
-          var cit = d.retData.city;
-          var wea = d.retData.weather;
+          weather = d.retData;
 
-          console.log("data:"+weather);
-          console.log("city:"+cit);
+          // 载入数据显示
+          $('#tq-wind').text(weather.WD);
+          $('#tq-temp').text(weather.temp + '℃');
+          $('#tq-lhtmp').html(weather.l_tmp + '<br>' + weather.h_tmp);
+          $('#tq-city').text(weather.city);
+          // $('#tq-weather').text(weather.weather);
+          // $('#tq-wind').text(weather.WD);
         }
     });
 	// 空气质量
@@ -24,29 +32,27 @@ $(function () {
       dataType:"json",
       headers:{'apikey':key},
       success: function(d){
-          var pm = JSON.stringify(d);
-          var aqi = d.retData.aqi;
-          var wea = d.retData.weather;
-          
-          console.log("data:"+pm);
-          console.log("city:"+aqi);
+          aqi = d.retData.aqi;
+          var level = d.retData.level;
+          // 载入数据显示
+          $('#tq-api').text(aqi);
+          $('#tq-level').text(level);
         }
     });
     // 猜一猜字谜
-    $.ajax({
-      url:"http://apis.baidu.com/myml/c1c/c1c",
-      type:"GET",
-      dataType:"json",
-      headers:{'apikey':key},
-      success: function(d){
-          var pm = JSON.stringify(d);
-          var ans = d.Answer;
-          var tit = d.Title;
-          
-          console.log("data:"+ans);
-          console.log("city:"+tit);
-        }
-    });
+    // $.ajax({
+    //   url:"http://apis.baidu.com/myml/c1c/c1c",
+    //   type:"GET",
+    //   dataType:"json",
+    //   headers:{'apikey':key},
+    //   success: function(d){
+    //   	zimi = d;
+    //       var ans = d.Answer;
+    //       var tit = d.Title;
+    //       $('#zimi-wt').text(tit);
+    //       $('#zimi-da').text(ans);
+    //     }
+    // });
 
 
 
@@ -59,10 +65,8 @@ $(function () {
 
 	$('.item-square').height(iw);
 	$('.item-rect').height(iw);
-	$("div#r13 ").css("background-image","url(./images/banks.jpg)");
-	$("div#r13 ").css("background-position","center");
-	$("div#r13 ").css("background-size","cover");
-	
+
+
 
 	var $home    = $('#home');
 	// $home.css("width",dw)
@@ -71,61 +75,67 @@ $(function () {
 	
 
 //进入正文
-	$('.item-square, .item-rect').on('click', function () {
+	$('.item-article').on('click', function () {
 
-		$article.show();
-		$article.css("opacity",1);
-		$article.css("width",dw);
 		var id = $(this).attr('id');
-		console.log(id);
+		// if (id[0] !=='a') return false;
 
-		if (id.match(/^a/)) {
-			_render(id);
+
+
+		if (id === 'z-63') {
+			// _renderZM();
+		} else if (id === 'a-01') {
+			_renderTQ();
+		} else {
+			_render(id);	
 		}
-		$('.screen').on("webkitTransitionEnd", function(){
-			$home.hide();
-			$('.screen').off("webkitTransitionEnd");
-			
-		});
-	
+		
+
+
+
+		// $article.show();
+		$article.fadeIn("slow");
+		$home.hide();
+		$(window).scrollTop(0);
+
 		
 		clearInterval(b);
-		$('#r22').removeClass('current');
-		$('#r23').removeClass('current');
-		$('#r24').removeClass('current');
-		$('#r25').removeClass('current');
-		$('#r22').css('z-index',99);
-		$('#r23').css('z-index',98);
-		$('#r24').css('z-index',97);
-		$('#r25').css('z-index',96);
-		f = 1;
+		$('#r51').removeClass('current');
+		$('#r52').removeClass('current');
 
-		var transLeft = "translateX("+(-dw)+"px)";
+		$('#r51').css('z-index',99);
+		$('#r52').css('z-index',98);
 
-		$(".screen").css("-webkit-transform",transLeft);
+		f = 0;
+
+		clearInterval(go);
+		$('#r11').removeClass('current');
+		$('#r12').removeClass('current');
+		$('#r11').css('z-index',99);
+		$('#r12').css('z-index',98);
+		weatherCardStat = 0;
+	});
+
+	$('.item-special').on('click', function(){
+		console.log("item-special clicked!");
 	});
 
 
 	//返回主页
 	$('#back').on('click', function () {
-		// $home.show();
-		// $article.hide();
-		
-		$home.show();
 
-		// $(window).scrollTop(0);
-		$(".screen").css("-webkit-transform","translateX(0px)");
-		$('.screen').on("webkitTransitionEnd", function(){
-			$article.hide();
-			$('.screen').off("webkitTransitionEnd");
-			
-		});
+		$article.fadeOut("slow");
 
+		$home.fadeIn("slow");
+
+		$(window).scrollTop(0);
+
+		weatherPlay();
 		a();
 	});
 
 
-//CUBE翻转动画
+//CUBE翻转动画  对象是box
 	var ori = iw/2+"px "+iw/2+"px "+(-iw/2)+"px" ;
 	$(".box").css("-webkit-transform-origin", ori);
 
@@ -146,7 +156,7 @@ $(function () {
 	}
 
 
-//SLIDE滑动动画
+//SLIDE滑动动画  对象是card
 	//-webkit-transform: translateY(-180px);
 	var transup = "translateY("+(-iw)+"px)";
 	var transdown = "translateY(0px)";
@@ -167,41 +177,53 @@ $(function () {
 	
 	}
 
-//FADE滑动动画
+//FADE滑动动画  对象是具体id
 	function fade(el){
 		el.on("webkitTransitionEnd", transend);
 		el.addClass('current');
 		function transend (){
 			el.off("webkitTransitionEnd", transend);
 			var index = $(this).css("z-index");
-			$(this).css("z-index",index-4);
+			$(this).css("z-index",index-2);
 			$(this).removeClass('current');
-			console.log(this);
+			// console.log(this);
 		}
 	}
-	var f = 1;
+	var weatherCardStat = 0;
+	var go;
+	var weatherPlay = function(){
+		go = setInterval(function(){
+			if(weatherCardStat ===0){
+				weatherCardStat = 1;
+				fade($('#r11'));
+			}else if(weatherCardStat===1){
+				weatherCardStat = 0;
+				fade($('#r12'));
+			}
+
+		},3000);
+	}
+	weatherPlay();
+
+
+	var f = 0;
 	var b;
 	var a = function(){
 		
 		b =	setInterval(function(){
-			if(f===1){
+			if(f===0){
 				f++;
-				fade($('#r22'));
-			}else if(f===2){
-				f++;
-				fade($('#r23'));
-			}else if(f===3){
-				f++;
-				fade($('#r24'));
-			}else if(f===4){
-				f=1;
-				fade($('#r25'));
+				fade($('#r51'));
+			}else if(f===1){
+				f=0;
+				fade($('#r52'));
 			}
 			
 		},2000);
 	}
 	a();
 	
+
 	// load news from html files
 	var _render = function (id) {
 		var url = 'html/' + id + '.html';
@@ -213,9 +235,22 @@ $(function () {
 		});
 	};
 
-	$('#article').css("left", dw);
-	$('#article').css("width", dw);
+	var _renderTQ = function(){
+		var html = '';
+		html = '<h1>北京</h1><p>' + weather.weather +'<br>'+weather.WD+'<br>'+weather.WS +'</p><p>' 
+		+ '空气质量指数：'+aqi +'</p><p>'
+		+ '现在温度：'+weather.temp+'℃' + '<br>'
+		+ '最高温度：'+weather.h_tmp+'℃' + '<br>'
+		+ '最底温度：'+weather.l_tmp+'℃' + '</p><br><br>';
+		$('.article-content').html(html);
+	};
 
+	// var _renderZM = function(){
+
+	// 	var html = '';
+	// 	html = '<h1>字谜</h1><br><p>' +'谜面：'+ zimi.Title + '<br><br></p><p>' +'谜底：'+ zimi.Answer + '<br></p><br><br>';
+	// 	$('.article-content').html(html);
+	// };
 
 	// end of app.js
 });

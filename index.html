@@ -4,17 +4,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!-- <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Didact+Gothic" rel="stylesheet" type="text/css"> -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Didact+Gothic" rel="stylesheet" type="text/css">
     <link href="css/home.css" rel="stylesheet">
     <script type="text/javascript">
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     window.onload = function() {
         setTimeout(function() {
             //document.getElementById('loader').style['display'] = "none";
             document.getElementById('home').style['opacity'] = 1;
-            document.getElementById('article').style['display'] = "visible";
+            // document.getElementById('article').style['display'] = "visible";
             // document.getElementById('loader').style['visibility'] = "hidden";
-            window.scrollTo(0,0);
+            window.scrollTo(0, 0);
             var body = document.getElementById("body");
             var loader = document.getElementById("loader");
             body.removeChild(loader);
@@ -24,9 +24,27 @@
         //$('#home').show();
     };
     </script>
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-72415715-2', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <title>小细节，大民生——政府工作报告摘读</title>
 </head>
 
 <body style="position:relative" id="body">
+    <div style="display: none"><p></p><img src="./images/logo.jpg"></div>
     <div class="loader" id="loader">
         <div class='circle'></div>
         <div class='circle'></div>
@@ -34,134 +52,160 @@
         <div class='circle'></div>
         <div class='circle'></div>
     </div>
-    <div class="slide">
-        <div id="home" class="screen mainp">
-            <div id="header">
-                <h2>2016年政府工作报告</h2>
-            </div>
-            <div id="main">
-                <!-- 第1行 -->
-                <div class="item-row" id="r01">
-                    <div class="item-square" id="a-01">
-                        <div class="box">
-                            <div class="teal face front" id="r11">
-                                <p>lex 词法分析器</p>
-                            </div>
-                            <div class="navy face back" id="r12">
-                                <p>Another One!</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-square" id="a-02">
-                        <div class="red" id="r12">
-                            <p>lex 词法分析器</p>
-                        </div>
-                    </div>
-                    <div class="item-square" id="a-03">
-                        <div class="slide">
-                            <div class="navy card top" id="r13">
-                                <p>栅格系统</p>
-                            </div>
-                            <div class="maroon card bottom" id="r14">
-                                <p>ffewa</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 第2行 -->
-                <div class="item-row" id="02">
-                    <div class="item-square" id="a-04">
-                        <div class="light-purple">
-                            <p>lex 词法分析器</p>
-                        </div>
-                    </div>
-                    <div class="item-rect" id="a-05">
-                        <div class="fades">
-                            <div class="blue piece " id="r22">
-                                <p>第一条稿件</p>
-                            </div>
-                            <div class="lime-green piece " id="r23">
-                                <p>第二条稿件</p>
-                            </div>
-                            <div class="dark-red piece " id="r24">
-                                <p>第三条稿件</p>
-                            </div>
-                            <div class="green piece " id="r25">
-                                <p>第四条稿件</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 第3行 -->
-                <div class="item-row ">
-                    <div class="item-rect" id="a-06">
-                        <div class="maroon">
-                            <p>lex 词法分析器</p>
-                        </div>
-                    </div>
-                    <div class="item-square" id="a-07">
-                        <div class="yellow">
-                            <p>栅格系统</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- 第4行 -->
-                <div class="item-row ">
-                    <div class="item-square" id="a-08">
-                        <div class="light-blue">
-                            <p>lex 词法分析器</p>
-                        </div>
-                    </div>
-                    <div class="item-rect" id="a-09">
-                        <div class="green">
-                            <p>栅格系统</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- 第5行 -->
-                <div class="item-row ">
-                    <div class="item-rect" id="a-10">
-                        <div class="lime-green">
-                            <p>lex 词法分析器</p>
-                        </div>
-                    </div>
-                    <div class="item-square" id="a-11">
-                        <div class="orange">
-                            <p>栅格系统</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- 第6行 -->
-                <div class="item-row ">
-                    <div class="item-square" id="a-12">
-                        <div class="dark-red">
-                            <p>lex 词法分析器</p>
-                        </div>
-                    </div>
-                    <div class="item-rect" id="a-13">
-                        <div class="purple">
-                            <p>栅格系统</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="footer">
-                <p>&copy; 2016 新华社技术实验室</p>
-            </div>
+    <div id="home">
+        <div id="header">
+            <!-- <h2>政府工作报告摘读</h2> -->
+            <p>Introducing…… </p>
+            <!-- <h2>——国务院总理李克强</h2> -->
         </div>
-        <div id="article" class="screen contentp">
-            <div class="article-content">
-                <h1>正在加载……</h1>
-            </div>
-            <!-- end of content -->
-            <div id="back">
-                <span class="icon"></span>
-                <span>返回主页</span>
-                <div class="clear">
+        <div id="main">
+            <!-- 第1行 -->
+            <div class="item-row" id="r01">
+                <div class="item-square item-article" id="a-01">
+                    <div class="fades">
+                        <div class="light-blue piece" id="r11">
+                            <span class="tq tips" id="tq-wind"></span>
+                            <span class="tq temp" id="tq-temp">--</span>
+                            <span class="tq l_tmp" id="tq-lhtmp"><br></span>
+                            <!-- <span class="tq city" id="tq-city">北京</span> -->
+                            <span class="tq wind" id="tq-weather">晴转多云</span>
+                        </div>
+                        <div class="blue piece" id="r12">
+                            <span class="tq tips" id="tq-zhishu">空气指数</span>
+                            <span class="tq temp" id="tq-api">337</span>
+                            <span class="tq " id="tq-level">严重污染</span>
+                        </div>
+                    </div>
                 </div>
+                <div class="item-rect item-article" id="a-15">
+                    <div class="purple" id="r62">
+                        <p>总理说</p>
+                    </div>
+                </div>
+                <!--                 <div class="item-rect item-article" id="a-02">
+                    <div class="teal" id="r13">
+                        <p>互联网 + 政务服务</p>
+                    </div>
+                </div> -->
+            </div>
+            <!-- 第2行 -->
+            <div class="item-row ">
+                <div class="item-rect item-article" id="a-10">
+                    <div class="maroon" id="r21">
+                        <p>商品质量惩罚性赔偿</p>
+                    </div>
+                </div>
+                <div class="item-square item-article" id="a-06">
+                    <div class="navy" id="r23">
+                        <p>居住证</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 第3行 -->
+            <div class="item-row ">
+                <div class="item-square item-article" id="a-08">
+                    <div class="slide">
+                        <div class="yellow card top" id="r30">
+                            <p>光纤入村</p>
+                        </div>
+                        <div class="light-purple card bottom" id="r31">
+                            <!-- <p>光纤入村</p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="item-rect item-article" id="a-05">
+                    <div class="green" id="r32">
+                        <p>城市地下综合管廊</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 第4行 -->
+            <div class="item-row ">
+                <div class="item-rect item-article" id="a-09">
+                    <div class="purple" id="r41">
+                        <p>重点高校 + 农村学生</p>
+                    </div>
+                </div>
+                <div class="item-square item-article" id="a-11">
+                    <div class="orange" id="r42">
+                        <p>农村公路</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 第5行 -->
+            <div class="item-row ">
+                <div class="item-square item-article" id="a-12">
+                    <div class="dark-red" id="r50">
+                        <p>城市停车场</p>
+                    </div>
+                </div>
+                <div class="item-rect item-article" id="a-13">
+                    <div class="fades">
+                        <div class="blue piece " id="r51">
+                            <p>职工分流安置</p>
+                        </div>
+                        <div class="lime-green piece" id="r52">
+                            <!-- <p>第二条稿件</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 第6行 -->
+            <div class="item-row" id="02">
+                <div class="item-rect item-article" id="a-02">
+                    <div class="teal" id="r13">
+                        <p>互联网 + 政务服务</p>
+                    </div>
+                </div>
+                <div class="item-square item-article" id="a-14">
+                    <div class="light-purple" id="r61">
+                        <p>儿科医生</p>
+                    </div>
+                </div>
+
+            </div>
+            <!-- 第7行 -->
+            <!--             <div class="item-row" id="02">
+                <div class="item-square item-article" id="a-03">
+                    <div class="box">     box动画
+                        <div class="light-purple face front">
+                            <p>lex 词法分析器</p>
+                        </div>
+                        <div class="yellow face back">
+                            <p>lex 词法分析器</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-rect item-article" id="z-63">
+                    <div class="slide">   slide动画
+                        <div class="purple card top" id="r63">
+                            <span class="zimi wenti" id="zimi-wt">夜夜看落花（打一礼貌用语）</span>
+                        </div>
+                        <div class="light-purple card bottom" id="r64">
+                            <span class="zimi daan" id="zimi-da">多谢</span>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div id="footer">
+            <p>Author：frankfan.hu@gmail.com&nbsp;&nbsp;ma.yanbin@qq.com</p>
+            <p style="color:#F4A460;margin-top:10px">&copy; 2016 Xinhua Technical Center</p>
+        </div>
+    </div>
+    <div id="article">
+        <div class="article-content">
+            <h1>正在加载……</h1>
+        </div>
+        <!-- end of content -->
+        <div id="back">
+            <span class="icon"></span>
+            <span>返回主页</span>
+            <div class="clear">
             </div>
         </div>
     </div>
+
     <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
 </body>
